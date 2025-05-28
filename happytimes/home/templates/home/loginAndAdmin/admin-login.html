@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Times - Admin Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <!-- <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">🧁 Happy Times</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About</a>
+                <a href="cart.html" id="cartCount">Cart (0)</a>
+            </nav>
+        </div>
+    </header> -->
+
+    <div class="container">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h2>Admin Login</h2>
+                <form id="adminLoginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="auth-button">Login</button>
+                </form>
+                <p class="auth-message">This area is restricted to administrators only.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/login.js' %}"></script>
+</body>
+</html>
