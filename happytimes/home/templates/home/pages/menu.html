@@ -17,7 +17,6 @@
                 <a href="{% url 'menu' %}">Menu</a>
                 <a href="{% url 'cart' %}">Cart</a>
                 <!-- <a href="about.html">About</a> -->
-                <!-- <a href="{% url 'login_page' %}">Login</a> -->
                 {% if user.is_authenticated %}
                     <a href="{% url 'profile' %}">Profile</a>
                 {% else %}
@@ -35,7 +34,7 @@
             </div>
 
             <div class="menu-grid" id="menuGrid">
-                <!-- Menu items will be populated by JavaScript -->
+                <!-- Populated elements by javascript appears here -->
             </div>
         </div>
     </div>
@@ -45,7 +44,7 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <div class="product-details" id="productDetails">
-                <!-- Product details will be populated by JavaScript -->
+                <!-- Populated elements by javascript appears here -->
             </div>
         </div>
     </div>

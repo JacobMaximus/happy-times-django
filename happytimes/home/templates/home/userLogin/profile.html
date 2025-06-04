@@ -1,17 +1,81 @@
+<!-- {% block content %}
+{% endblock %} -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
 
-{% block content %}
-<div class="profile-container">
-    <h2>User Profile</h2>
-    <ul>
-        <li><strong>Name:</strong> {{ user.name }}</li>
-        <li><strong>Email:</strong> {{ user.email }}</li>
-        <li><strong>Phone Number:</strong> {{ user.phone_number }}</li>
-        <li><strong>Password:</strong> ******** (hidden)</li>
-    </ul>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">🧁 Happy Times</a>
+            <nav class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'menu' %}">Menu</a>
+                <a href="{% url 'cart' %}">Cart</a>
+                <!-- <a href="about.html">About</a> -->
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' %}">Profile</a>
+                {% else %}
+                    <a href="{% url 'login_page' %}">Login</a>
+                {% endif %}
 
-    <form method="POST" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-    </form>
-</div>
-{% endblock %}
+
+            </nav>
+        </div>
+    </header>
+
+
+
+    <div class="container">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h2>User Profile</h2>
+                <div class="profile-details">
+                    <div class="profile-item">
+                        <span class="profile-label">Name:</span>
+                        <span class="profile-value">{{ user.name }}</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Email</span>
+                        <span class="profile-value">{{ user.email }}</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Phone Number</span>
+                        <span class="profile-value">{{ user.phone_number }}</span>
+                    </div>
+                </div>
+                
+                <form method="POST" action="{% url 'logout' %}" class="auth-form">
+                    {% csrf_token %}
+                    <button type="submit" class="auth-button">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="profile-container">
+        <h2>User Profile</h2>
+        <ul>
+            <li><strong>Name:</strong> {{ user.name }}</li>
+            <li><strong>Email:</strong> {{ user.email }}</li>
+            <li><strong>Phone Number:</strong> {{ user.phone_number }}</li>
+            <li><strong>Password:</strong> ******** (hidden)</li>
+        </ul>
+    
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    </div>  -->
+</body>
+</html>

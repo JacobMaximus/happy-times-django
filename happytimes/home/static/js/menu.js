@@ -89,11 +89,6 @@ function openProductModal(productId) {
                 </div>
 
                 <div class="option-group">
-                    <label for="phone">Your Phone Number:</label>
-                    <input type="tel" id="phone" placeholder="Enter your phone number">
-                </div>
-
-                <div class="option-group">
                     <label for="notes">Special Instructions:</label>
                     <textarea id="notes" placeholder="Enter any special requirements or customization details"></textarea>
                 </div>
@@ -116,7 +111,7 @@ function closeModal() {
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     const weight = parseFloat(document.getElementById('weight').value);
-    const phone = document.getElementById('phone').value;
+    // const phone = document.getElementById('phone').value;
     const notes = document.getElementById('notes').value;
     const eggless = document.getElementById('eggless').checked;
 
@@ -129,7 +124,7 @@ function addToCart(productId) {
         price: product.price,
         weight: weight,
         totalPrice: totalPrice,
-        phone: phone,
+        // phone: phone,
         notes: notes,
         eggless: eggless,
         image: product.image,

@@ -6,9 +6,9 @@ function updateCart() {
 
     // Update cart count
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    if (cartCount) {
-        cartCount.textContent = `Cart (${totalItems})`;
-    }
+    // if (cartCount) {
+    //     cartCount.textContent = `Cart (${totalItems})`;
+    // }
 
     if (cart.length === 0) {
         cartItems.innerHTML = '<p style="text-align: center; padding: 2rem;">Your cart is empty</p>';

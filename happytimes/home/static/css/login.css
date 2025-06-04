@@ -148,3 +148,32 @@ header {
         padding: 1.5rem;
     }
 }
+
+
+
+/* profile */
+.profile-details {
+    margin-bottom: 2rem;
+}
+
+.profile-item {
+    padding: 1rem;
+    border-bottom: 1px solid #ffc6c7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-item:last-child {
+    border-bottom: none;
+}
+
+.profile-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.profile-value {
+    color: #33272a;
+    font-weight: bold;
+}
