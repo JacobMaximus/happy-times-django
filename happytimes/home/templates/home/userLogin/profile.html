@@ -1,0 +1,17 @@
+
+{% block content %}
+<div class="profile-container">
+    <h2>User Profile</h2>
+    <ul>
+        <li><strong>Name:</strong> {{ user.name }}</li>
+        <li><strong>Email:</strong> {{ user.email }}</li>
+        <li><strong>Phone Number:</strong> {{ user.phone_number }}</li>
+        <li><strong>Password:</strong> ******** (hidden)</li>
+    </ul>
+
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+</div>
+{% endblock %}

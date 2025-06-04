@@ -1,2 +1,4 @@
 myenv/
 happytimes/home/__pycache__
+happytimes/home/migrations/__pycache__
+happytimes/happytimes/__pycache__
