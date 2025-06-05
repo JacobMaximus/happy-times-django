@@ -73,6 +73,12 @@ document.getElementById('userLoginForm')?.addEventListener('submit', async (e) =
     }
 });
 
+
+
+
+
+
+
 // Handle admin login -- THIS IS FOR ADMIN
 document.getElementById('adminLoginForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
